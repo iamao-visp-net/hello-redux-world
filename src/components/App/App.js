@@ -7,9 +7,8 @@ import "./App.css";
 
 const initialState = { term: "Redux" };
 const store = createStore(reducer, initialState);
-
+const { term } = store.getState();
 class App extends Component {
-  state = store.getState();
   render() {
     return (
       <div className="App">
@@ -18,7 +17,7 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
 
-        <HelloWorld term={this.state.term} />
+        <HelloWorld term={term} />
       </div>
     );
   }
